@@ -109,7 +109,13 @@ const activities = [
       "どんな本を読めばいいかわからない方のお話を伺い、最適な本をお選びします。あなたの興味・関心・悩みに寄り添った選書をお届けします。",
     href: null,
     linkLabel: null,
-    status: "準備中",
+    status: "PoC実施中",
+    badge: "特別価格",
+    cta: "気になる方はお気軽にご連絡ください",
+    contacts: [
+      { label: "X (Twitter)", href: "https://x.com/ken_book_lover" },
+      { label: "Bluesky", href: "https://bsky.app/profile/yomuhito21.bsky.social" },
+    ],
   },
   {
     title: "読書会",
@@ -154,7 +160,31 @@ function ActivitiesSection() {
               <p className="text-stone-600 text-sm leading-relaxed mb-6">
                 {activity.description}
               </p>
-              {activity.href ? (
+              {"badge" in activity && activity.badge && (
+                <p className="text-sm font-bold text-amber-700 mb-2">
+                  {activity.badge}でお試しいただけます
+                </p>
+              )}
+              {"cta" in activity && activity.cta && (
+                <p className="text-sm text-stone-600 mb-3">
+                  {activity.cta}
+                </p>
+              )}
+              {"contacts" in activity && activity.contacts ? (
+                <div className="flex gap-4">
+                  {activity.contacts.map((c: { label: string; href: string }) => (
+                    <Link
+                      key={c.label}
+                      href={c.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-block text-sm text-amber-800 border-b border-amber-800/30 hover:border-amber-800 transition-colors"
+                    >
+                      {c.label} &rarr;
+                    </Link>
+                  ))}
+                </div>
+              ) : activity.href ? (
                 <Link
                   href={activity.href}
                   target="_blank"
