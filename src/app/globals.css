@@ -1,0 +1,15 @@
+@import "tailwindcss";
+
+@theme inline {
+  --font-sans: var(--font-sans-jp), "Hiragino Kaku Gothic ProN", sans-serif;
+  --font-serif: var(--font-serif-jp), "Hiragino Mincho ProN", serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+::selection {
+  background-color: #d6bcaa;
+  color: #1c1917;
+}
