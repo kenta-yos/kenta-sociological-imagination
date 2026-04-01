@@ -149,7 +149,11 @@ function ActivitiesSection() {
                   {activity.subtitle}
                 </p>
                 {activity.status && (
-                  <span className="text-xs bg-stone-200 text-stone-500 px-2 py-0.5 rounded-full">
+                  <span className={`text-xs px-2 py-0.5 rounded-full font-medium ${
+                    activity.status === "PoC実施中"
+                      ? "bg-amber-100 text-amber-800"
+                      : "bg-stone-200 text-stone-500"
+                  }`}>
                     {activity.status}
                   </span>
                 )}
