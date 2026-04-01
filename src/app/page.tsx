@@ -89,8 +89,8 @@ const activities = [
     subtitle: "神保町の棚主として",
     description:
       "神保町にあるシェア型書店「PASSAGE by ALL REVIEWS」で棚主をしています。学術と日常をつなぐ本をキュレーションし、お届けしています。",
-    href: null,
-    linkLabel: null,
+    href: "https://passage.allreviews.jp/store/FZCII3NVTMHTZQQHMCVPATIJ",
+    linkLabel: "PASSAGEの棚を見る",
     status: "準備中",
   },
   {
